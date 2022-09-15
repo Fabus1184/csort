@@ -6,12 +6,13 @@
 
 extern bool is_sorted(int *arr, int size);
 
-extern void bubble_sort(int *arr, int size, void (*step)(int*, int));
-extern void insertion_sort(int *arr, int size, void (*step)(int*, int));
-extern void bogo_sort(int *arr, int size, void (*step)(int*, int));
-extern void counting_sort(int *arr, int size, void (*step)(int*, int));
-extern void heap_sort(int *arr, int size, void (*step)(int*, int));
-extern void selection_sort(int *arr, int size, void (*step)(int*, int));
-extern void cocktail_shaker_sort(int *arr, int size, void (*step)(int*, int));
+typedef const void *sorting_function(int *, int, const void *(int*, int));
 
-extern void (*algos[7])(int *, int, void (*)(int*, int));
+extern sorting_function bubble_sort;
+extern sorting_function insertion_sort;
+extern sorting_function bogo_sort;
+extern sorting_function counting_sort;
+extern sorting_function heap_sort;
+extern sorting_function selection_sort;
+extern sorting_function cocktail_shaker_sort;
+

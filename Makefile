@@ -1,6 +1,6 @@
 CC := gcc
 OPTS := -Wall -Wextra
-LIBS :=
+LIBS := -lm
 INCS := -I.
 SRCS := csort.c $(wildcard algo/*c)
 

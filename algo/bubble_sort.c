@@ -1,6 +1,6 @@
 #include "algo.h"
 
-void bubble_sort(int *arr, int size, void (*step)(int*, int)) {
+const void *bubble_sort(int *arr, int size, const void *step(int*, int)) {
     while (!is_sorted(arr, size)) {
         for (int i = 1; i < size; i++) {
             if (arr[i] < arr[i - 1]) {
@@ -12,4 +12,5 @@ void bubble_sort(int *arr, int size, void (*step)(int*, int)) {
             }
         }
     }
+    return NULL;
 }

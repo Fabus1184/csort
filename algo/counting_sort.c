@@ -1,6 +1,6 @@
 #include "algo.h"
 
-void counting_sort(int *arr, int size, void (*step)(int*, int)) {
+const void *counting_sort(int *arr, int size, const void *step(int*, int)) {
     int _arr[size];
     memcpy(_arr, arr, size * sizeof(int));
     int _i = 0;
@@ -15,4 +15,5 @@ void counting_sort(int *arr, int size, void (*step)(int*, int)) {
     }
     
     memcpy(arr, _arr, size * sizeof(int));
+    return NULL;
 }
