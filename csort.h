@@ -11,17 +11,22 @@
 
 #include "algo/algo.h"
 
-const uint64_t algos[] = {
-  (uint64_t) bubble_sort, 10,
-  (uint64_t) insertion_sort, 10,
-  (uint64_t) selection_sort, 10,
-  (uint64_t) heap_sort, 10,
-  (uint64_t) cocktail_shaker_sort, 10,
-  (uint64_t) counting_sort, 10,
-  (uint64_t) bogo_sort, 10,
+#define RESET "\033[0m"
+#define UNDERLINE "\033[4m"
+#define PREV_LINE "\033[A"
+
+static const uint64_t algos[] = {
+  (uint64_t) bubble_sort, 3, (uint64_t) "Bubble Sort",
+  (uint64_t) insertion_sort, 50, (uint64_t) "Insertion Sort",
+  (uint64_t) selection_sort, 100, (uint64_t) "Selection Sort",
+  (uint64_t) merge_sort, 10, (uint64_t) "Merge Sort",
+  (uint64_t) heap_sort, 30, (uint64_t) "Heap Sort",
+  (uint64_t) cocktail_shaker_sort, 2, (uint64_t) "Cocktail Shaker Sort",
+  (uint64_t) counting_sort, 20, (uint64_t) "Counting Sort",
+  (uint64_t) bogo_sort, 1, (uint64_t) "Bogo Sort",
 };
 
-const char blocks[][4] = {
+static const char blocks[][4] = {
     "\u2581",
     "\u2582",
     "\u2583",
@@ -30,15 +35,4 @@ const char blocks[][4] = {
     "\u2586",
     "\u2587",
     "\u2588",
-};
-
-const char colors[][8] = {
-    "\e[0;32m",
-    "\e[0;33m",
-    "\e[0;36m",
-    "\e[0;34m",
-    "\e[0;35m",
-    "\e[0;31m",
-    "\e[0;30m",
-    "\e[0;37m",
 };

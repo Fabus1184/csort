@@ -15,4 +15,5 @@ extern sorting_function counting_sort;
 extern sorting_function heap_sort;
 extern sorting_function selection_sort;
 extern sorting_function cocktail_shaker_sort;
+extern sorting_function merge_sort;
 
