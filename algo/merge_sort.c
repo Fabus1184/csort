@@ -1,6 +1,6 @@
 #include "algo.h"
 
-void merge(int *arr, int size, int l, int m, int r, const void *step(int*, int)) {
+void merge(int *arr, int size, int l, int m, int r) {
     int i, j, k;
     int n1 = m - l + 1;
     int n2 = r - m;
@@ -46,18 +46,18 @@ void merge(int *arr, int size, int l, int m, int r, const void *step(int*, int))
     }
 }
 
-void _merge_sort(int *arr, int size, int l, int r, const void *step(int*, int)) {
+void _merge_sort(int *arr, int size, int l, int r) {
     if (l < r) {
         int m = l + (r - l) / 2;
   
-        _merge_sort(arr, size, l, m, step);
-        _merge_sort(arr, size, m + 1, r, step);
+        _merge_sort(arr, size, l, m);
+        _merge_sort(arr, size, m + 1, r);
 
-        merge(arr, size, l, m, r, step);
+        merge(arr, size, l, m, r);
     }
 }
 
-const void *merge_sort(int *arr, int size, const void *step(int*, int)) {
-	_merge_sort(arr, size, 0, size - 1, step);
+const void *merge_sort(int *arr, int size) {
+	_merge_sort(arr, size, 0, size - 1);
 	return NULL;
 }

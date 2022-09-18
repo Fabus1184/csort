@@ -17,7 +17,7 @@ void heapify(int arr[], int N, int i)
     }
 }
  
-const void *heap_sort(int *arr, int size, const void *step(int*, int))
+const void *heap_sort(int *arr, int size)
 {
     for (int i = size / 2 - 1; i >= 0; i--) {
         heapify(arr, size, i);

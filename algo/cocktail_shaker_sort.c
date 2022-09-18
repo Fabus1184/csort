@@ -1,7 +1,6 @@
 #include "algo.h"
 
-const void *cocktail_shaker_sort(int *arr, int size, const void *step(int*, int))
-{
+const void *cocktail_shaker_sort(int *arr, int size) {
     bool swapped = true;
     int start = 0;
     int end = size - 1;

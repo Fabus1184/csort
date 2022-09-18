@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 CC := gcc
-OPTS := -Wall -Wextra
+OPTS := -Wall -Wextra -g
 LIBS := -lm
 INCS := -I.
 SRCS := csort.c $(wildcard algo/*c)

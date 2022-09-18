@@ -1,7 +1,5 @@
 #include "csort.h"
 
-#define RAND_ARRAY_MAX 255
-
 static int ms_delay;
 
 void print_array(int *arr, int size) {
@@ -26,10 +24,9 @@ void random_array(int *arr, int size) {
     }
 }
 
-const void *step(int *arr, int size) {
+void step(int *arr, int size) {
     print_array(arr, size);
     usleep(ms_delay * 1000);
-    return NULL;
 }
 
 void _atexit() {
@@ -58,7 +55,7 @@ int main() {
 		printf("%s\r%*s\r%s", PREV_LINE, n, " ", RESET);
 		printf("%s%s:%s\n", UNDERLINE, (char*) algos[i + 2], RESET);
 		printf("%*s\r", n, " ");
-        ((sorting_function*) algos[i])(tmp, n, step);
+        ((sorting_function*) algos[i])(tmp, n);
 		usleep(1000 * 1000);
         memcpy(tmp, arr, n * sizeof(int));
     }

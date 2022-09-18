@@ -1,6 +1,6 @@
 #include "algo.h"
 
-const void *insertion_sort(int *arr, int size, const void *step(int*, int)) {
+const void *insertion_sort(int *arr, int size) {
     int i, key, j;
     for (i = 1; i < size; i++) {
         key = arr[i];

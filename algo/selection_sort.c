@@ -1,6 +1,6 @@
 #include "algo.h"
 
-const void *selection_sort(int *arr, int size, const void *step(int*, int))
+const void *selection_sort(int *arr, int size)
 {
     step(arr, size);
     int i, j, min_idx;

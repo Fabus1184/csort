@@ -1,6 +1,6 @@
 #include "algo.h"
 
-const void *bogo_sort(int *arr, int size, const void *step(int*, int)) {
+const void *bogo_sort(int *arr, int size) {
     while(!is_sorted(arr, size)) {
         int n = rand() % size, m = rand() % size, tmp = arr[n];
         arr[n] = arr[m];

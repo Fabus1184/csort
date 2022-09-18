@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 
-const void *counting_sort(int *arr, int size, const void *step(int*, int)) {
+const void *counting_sort(int *arr, int size) {
     int _arr[size];
 
 	int max = 0;
