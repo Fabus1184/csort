@@ -9,13 +9,12 @@ int partition(int *arr, int low, int high) {
     for (int j = low; j <= high - 1; j++) {
         if (arr[j] < pivot) { 
             i++;
-            swap(&arr[i], &arr[j]);
+            swap(arr + i, arr + j);
             step(arr, arr_size);
         }
     }
-
     
-    swap(&arr[i + 1], &arr[high]);
+    swap(arr + i + 1, arr + high);
 
     return (i + 1);
 } 
@@ -33,4 +32,3 @@ const void *quicksort(int *arr, int size) {
     _quicksort(arr, 0, size - 1);
     return NULL;
 }
-

@@ -51,7 +51,7 @@ int main() {
 
 	printf("\n");
     for (int i = 0; i < (int) sizeof(algos) / (int) sizeof(algos[0]); i += 3) {
-		ms_delay = algos[i + 1];
+		ms_delay = (long) algos[i + 1];
 		printf("%s\r%*s\r%s", PREV_LINE, n, " ", RESET);
 		printf("%s%s:%s\n", UNDERLINE, (char*) algos[i + 2], RESET);
 		printf("%*s\r", n, " ");

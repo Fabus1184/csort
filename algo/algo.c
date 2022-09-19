@@ -9,8 +9,8 @@ bool is_sorted(int *arr, int size) {
     return true;
 }
 
-void swap(int *a, int *b) {
-    *a ^= *b;
-    *b ^= *a;
-    *a ^= *b;
+void swap(int *x, int *y) {
+    int tmp = *x;
+    *x = *y;
+    *y = tmp;
 }
