@@ -1,10 +1,10 @@
 # csort
 
-## Visualizing sorting algorithms in cli
+#### Visualizing sorting algorithms in cli
 
 ![](thumbnail.gif)
 
-## Currently implemented algorithms:
+#### Currently implemented algorithms:
 
 - Bubble Sort
 - Insertion Sort
