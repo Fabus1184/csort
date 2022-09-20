@@ -21,6 +21,7 @@ sorting_function cocktail_shaker_sort;
 sorting_function merge_sort;
 sorting_function quicksort;
 sorting_function bitonic_sort;
+sorting_function radix_sort;
 
 void swap(int *a, int *b);
 

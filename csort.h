@@ -23,12 +23,13 @@ static const void* algos[] = {
   bubble_sort,          (void*) 3L,      "Bubble Sort",
   insertion_sort,       (void*) 50L,     "Insertion Sort",
   selection_sort,       (void*) 100L,    "Selection Sort",
+  cocktail_shaker_sort, (void*) 2L,      "Cocktail Shaker Sort",
   merge_sort,           (void*) 10L,     "Merge Sort",
+  bitonic_sort,         (void*) 30L,     "Bitonic Sort",
   quicksort,            (void*) 25L,     "Quicksort",
   heap_sort,            (void*) 30L,     "Heap Sort",
-  bitonic_sort,         (void*) 30L,     "Bitonic Sort",
-  cocktail_shaker_sort, (void*) 2L,      "Cocktail Shaker Sort",
   counting_sort,        (void*) 20L,     "Counting Sort",
+  radix_sort,           (void*) 20L,     "Radix Sort",
   bogo_sort,            (void*) 1L,      "Bogo Sort",
 };
 
