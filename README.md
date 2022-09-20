@@ -9,10 +9,11 @@
 - Bubble Sort
 - Insertion Sort
 - Selection Sort
+- Cocktail Shaker Sort
 - Merge Sort
+- Bitonic Sort
 - Quicksort
 - Heap Sort
-- Bitonic Sort
-- Cocktail Shaker Sort
 - Counting Sort
+- Radix Sort
 - Bogo Sort
