@@ -1,9 +1,9 @@
 #include "algo.h"
 
-const void *selection_sort(int *arr, int size)
+void selection_sort(uint32_t *arr, size_t size)
 {
     step(arr, size);
-    int i, j, min_idx;
+    size_t i, j, min_idx;
     for (i = 0; i < size - 1; i++)
     {
         min_idx = i;
@@ -14,12 +14,12 @@ const void *selection_sort(int *arr, int size)
         }
         
         if(min_idx != i) {
-            int tmp = arr[min_idx];
+            size_t tmp = arr[min_idx];
             arr[min_idx] = arr[i];
             arr[i] = tmp;
 
             step(arr, size);
         }    
     }
-    return NULL;
+    
 }

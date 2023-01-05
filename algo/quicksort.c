@@ -1,34 +1,41 @@
 #include "algo.h"
 
-static int arr_size;
+static size_t arr_size;
 
-int partition(int *arr, int low, int high) {
-    int pivot = arr[high];
-    int i = (low - 1);
+size_t partition(uint32_t pivot, uint32_t *smaller, uint32_t *bigger, uint32_t *arr, size_t size) {
+    size_t bigger_size = 0;
+    size_t smaller_size = 0;
 
-    for (int j = low; j <= high - 1; j++) {
-        if (arr[j] < pivot) { 
-            i++;
-            swap(arr + i, arr + j);
-            step(arr, arr_size);
+    for (size_t i = 0; i < size; i++) {
+        uint32_t x = arr[i];
+        if (x < pivot) {
+            smaller[smaller_size++] = x;            
+        } else {
+            bigger[bigger_size++] = x;
         }
     }
-    
-    swap(arr + i + 1, arr + high);
 
-    return (i + 1);
-} 
-  
-void _quicksort(int *arr, int low, int high) { 
-    if (low < high) {
-        int pi = partition(arr, low, high);
-        _quicksort(arr, low, pi - 1);
-        _quicksort(arr, pi + 1, high);
-    } 
-} 
+    return smaller_size;
+}
 
-const void *quicksort(int *arr, int size) {
+
+void _quicksort(uint32_t *arr, size_t size) {
+    if (size > 1) {
+        uint32_t pivot = *arr;
+        uint32_t bigger[size], smaller[size];
+
+        size_t smaller_size = partition(pivot, smaller, bigger, arr + 1, size - 1);
+        _quicksort(smaller, smaller_size);
+        _quicksort(bigger, size - smaller_size - 1);
+
+        memcpy(arr, smaller, smaller_size * sizeof(uint32_t));
+        arr[smaller_size] = pivot;
+        memcpy(arr + smaller_size + 1, bigger, (size - smaller_size - 1) * sizeof(uint32_t));
+    }
+}
+
+
+void quicksort(uint32_t *arr, size_t size) {
     arr_size = size;
-    _quicksort(arr, 0, size - 1);
-    return NULL;
+    _quicksort(arr, size);
 }

@@ -1,7 +1,9 @@
 #include "algo.h"
 
-const void *insertion_sort(int *arr, int size) {
-    int i, key, j;
+void insertion_sort(uint32_t *arr, size_t size) {
+    size_t i, key;
+    int64_t j;
+    
     for (i = 1; i < size; i++) {
         key = arr[i];
         j = i - 1;
@@ -15,5 +17,5 @@ const void *insertion_sort(int *arr, int size) {
 
         step(arr, size);
     }
-    return NULL;
+    
 }

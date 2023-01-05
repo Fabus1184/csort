@@ -1,20 +1,21 @@
 #include "algo.h"
 
-int max(int *arr, int n) {
-    int mx = arr[0];
-    for (int i = 1; i < n; i++) {
-        if (arr[i] > mx) {
-            mx = arr[i];
+size_t max(uint32_t *arr, size_t n) {
+    size_t x = arr[0];
+    for (size_t i = 1; i < n; i++) {
+        if (arr[i] > x) {
+            x = arr[i];
         }
     }
-    return mx;
+    return x;
 }
  
-void count_sort(int *arr, int n, int exp) {
-    int output[n];
-    int i, count[10] = { 0 };
+void count_sort(uint32_t *arr, size_t n, size_t exp) {
+    size_t output[n];
+    size_t count[10] = { 0 };
+    int64_t i;
  
-    for (i = 0; i < n; i++) {
+    for (i = 0; i < (int64_t) n; i++) {
 		count[(arr[i] / exp) % 10]++;
     }
     
@@ -27,17 +28,17 @@ void count_sort(int *arr, int n, int exp) {
         count[(arr[i] / exp) % 10]--;
     }
 
- 	for (i = 0; i < n; i++) {
+ 	for (i = 0; i < (int64_t) n; i++) {
 		arr[i] = output[i];
 		step(arr, n);
  	}
 }
  
-const void *radix_sort(int *arr, int size) {
-    int m = max(arr, size);
+void radix_sort(uint32_t *arr, size_t size) {
+    size_t m = max(arr, size);
 
-    for (int exp = 1; m / exp > 0; exp *= 10) {
+    for (size_t exp = 1; m / exp > 0; exp *= 10) {
         count_sort(arr, size, exp);
     }
-    return NULL;
+    
 }

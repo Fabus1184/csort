@@ -1,15 +1,15 @@
 #include "algo.h"
 
-const void *cocktail_shaker_sort(int *arr, int size) {
+void cocktail_shaker_sort(uint32_t *arr, size_t size) {
     bool swapped = true;
-    int start = 0;
-    int end = size - 1;
+    size_t start = 0;
+    size_t end = size - 1;
  
     while (swapped) {
         swapped = false; 
-        for (int i = start; i < end; ++i) {
+        for (size_t i = start; i < end; ++i) {
             if (arr[i] > arr[i + 1]) {
-                int tmp = arr[i];
+                size_t tmp = arr[i];
                 arr[i] = arr[i + 1];
                 arr[i + 1] = tmp;
                 swapped = true;
@@ -24,9 +24,9 @@ const void *cocktail_shaker_sort(int *arr, int size) {
         swapped = false;
         --end;
 
-        for (int i = end - 1; i >= start; --i) {
+        for (int64_t i = end - 1; i >= (int64_t) start; --i) {
             if (arr[i] > arr[i + 1]) {
-                int tmp = arr[i];
+                size_t tmp = arr[i];
                 arr[i] = arr[i + 1];
                 arr[i + 1] = tmp;
                 swapped = true;
@@ -36,5 +36,4 @@ const void *cocktail_shaker_sort(int *arr, int size) {
         }
         ++start;
     }
-    return NULL;
 }

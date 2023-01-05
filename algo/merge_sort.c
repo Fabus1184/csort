@@ -1,11 +1,11 @@
 #include "algo.h"
 
-void merge(int *arr, int size, int l, int m, int r) {
-    int i, j, k;
-    int n1 = m - l + 1;
-    int n2 = r - m;
+void merge(uint32_t *arr, size_t size, size_t l, size_t m, size_t r) {
+    size_t i, j, k;
+    size_t n1 = m - l + 1;
+    size_t n2 = r - m;
   
-    int L[n1], R[n2];
+    size_t L[n1], R[n2];
  
     for (i = 0; i < n1; i++)
         L[i] = arr[l + i];
@@ -46,9 +46,9 @@ void merge(int *arr, int size, int l, int m, int r) {
     }
 }
 
-void _merge_sort(int *arr, int size, int l, int r) {
+void _merge_sort(uint32_t *arr, size_t size, size_t l, size_t r) {
     if (l < r) {
-        int m = l + (r - l) / 2;
+        size_t m = l + (r - l) / 2;
   
         _merge_sort(arr, size, l, m);
         _merge_sort(arr, size, m + 1, r);
@@ -57,7 +57,7 @@ void _merge_sort(int *arr, int size, int l, int r) {
     }
 }
 
-const void *merge_sort(int *arr, int size) {
+void merge_sort(uint32_t *arr, size_t size) {
 	_merge_sort(arr, size, 0, size - 1);
-	return NULL;
+	
 }

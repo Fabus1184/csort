@@ -1,7 +1,7 @@
 #include "algo.h"
 
-bool is_sorted(int *arr, int size) {
-    for (int i = 1; i < size; i++) {
+bool is_sorted(uint32_t *arr, size_t size) {
+    for (size_t i = 1; i < size; i++) {
         if (arr[i] < arr[i - 1]) {
             return false;
         }
@@ -9,8 +9,8 @@ bool is_sorted(int *arr, int size) {
     return true;
 }
 
-void swap(int *x, int *y) {
-    int tmp = *x;
+void swap(uint32_t *x, uint32_t *y) {
+    uint32_t k = *x;
     *x = *y;
-    *y = tmp;
+    *y = k;
 }

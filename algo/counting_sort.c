@@ -2,26 +2,18 @@
 
 #include <stdio.h>
 
-const void *counting_sort(int *arr, int size) {
-    int _arr[size];
+void counting_sort(uint32_t *arr, size_t size) {
+    uint32_t _arr[size];
 
-	int max = 0;
-	for (int i = 0; i < size; i++) {
-		if (arr[i] > max) {
-			max = arr[i];
-		}
-	}
-
-    int _i = 0;
-    for (int n = 0; n <= max; n++) {
-        for (int i = 0; i < size; i++) {
+    size_t _i = 0;
+    for (size_t n = 0; n <= RAND_ARRAY_MAX; n++) {
+        for (size_t i = 0; i < size; i++) {
             if (arr[i] == n) {
                 _arr[_i++] = n;
+                step(_arr, _i);
             }
         }
-        step(_arr, _i);
     }
     
-    memcpy(arr, _arr, size * sizeof(int));
-    return NULL;
+    memcpy(arr, _arr, size * sizeof(uint32_t));    
 }
