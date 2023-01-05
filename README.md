@@ -9,6 +9,7 @@
 - Bubble Sort
 - Insertion Sort
 - Selection Sort
+- Gnome Sort
 - Cocktail Shaker Sort
 - Merge Sort
 - Bitonic Sort
